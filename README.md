@@ -25,6 +25,8 @@ Library TypeScript/JavaScript modern untuk mengonversi angka menjadi kalimat **t
 
 ## Instalasi
 
+### 1. Melalui Package Manager (npm Registry)
+
 ```bash
 # npm
 npm install indo-terbilang
@@ -38,6 +40,30 @@ yarn add indo-terbilang
 # bun
 bun add indo-terbilang
 ```
+
+### 2. Download atau Clone Manual dari GitHub
+
+Jika Anda ingin mengunduh source code langsung dari GitHub (https://github.com/salmankalista/indo-terbilang):
+
+- **Download ZIP:** Unduh arsip source code terbaru dari https://github.com/salmankalista/indo-terbilang/archive/refs/heads/main.zip (atau melalui tombol **Code $\to$ Download ZIP** di halaman repository), lalu ekstrak.
+- **Atau Clone via Git:**
+  ```bash
+  git clone https://github.com/salmankalista/indo-terbilang.git
+  cd indo-terbilang
+  npm install
+  npm run build
+  ```
+
+Setelah di-build (`dist/` terbentuk), Anda dapat langsung memakainya dari project lokal lain melalui `package.json`:
+
+```json
+{
+  "dependencies": {
+    "indo-terbilang": "file:../indo-terbilang"
+  }
+}
+```
+Lalu jalankan `npm install` pada project Anda.
 
 ---
 
@@ -298,6 +324,19 @@ Class error turunan `Error` dengan properti `code: TerbilangErrorCode`:
 - `'INVALID_INPUT'`: Tipe bukan `number | bigint | string`, string kosong, format ambigu/ilegal, atau nilai opsi di luar aturan.
 - `'NON_FINITE_NUMBER'`: Input `number` berupa `NaN`, `Infinity`, atau `-Infinity`.
 - `'OUT_OF_RANGE'`: Panjang bagian bulat melebihi 36 digit (di atas skala `desiliun`) atau eksponen notasi ilmiah melampaui batas aman (`±100`).
+
+---
+
+## Kredit & Referensi
+
+Kaidah penulisan bilangan merujuk pada aturan baku **EYD V / KBBI** (Badan Pengembangan dan Pembinaan Bahasa).
+
+Pengembangan, build, dan pengujian library ini didukung oleh toolchain open-source berikut *(hanya sebagai `devDependencies`, tidak ikut ter-bundle ke kode distribusi)*:
+- [TypeScript](https://github.com/microsoft/TypeScript) (`Apache-2.0`)
+- [tsup](https://github.com/egoist/tsup) (`MIT`)
+- [Vitest](https://github.com/vitest-dev/vitest) & `@vitest/coverage-v8` (`MIT`)
+- [publint](https://github.com/publint/publint) (`MIT`)
+- [Are The Types Wrong?](https://github.com/arethetypeswrong/arethetypeswrong.github.io) (`MIT`)
 
 ---
 
