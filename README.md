@@ -301,6 +301,19 @@ Class error turunan `Error` dengan properti `code: TerbilangErrorCode`:
 
 ---
 
+## Orisinalitas Kode & Kredit
+
+Seluruh implementasi runtime di dalam `indo-terbilang` (`src/` dan hasil build `dist/`) ditulis **100% secara orisinal dari nol** tanpa menyalin potongan kode pihak ketiga dan tanpa runtime dependency eksternal. Kaidah penulisan bilangan merujuk pada aturan baku **EYD V / KBBI** (Badan Pengembangan dan Pembinaan Bahasa).
+
+Pengembangan, build, dan pengujian library ini didukung oleh toolchain open-source berikut *(hanya sebagai `devDependencies`, tidak ikut ter-bundle ke kode distribusi)*:
+- [TypeScript](https://github.com/microsoft/TypeScript) (`Apache-2.0`)
+- [tsup](https://github.com/egoist/tsup) (`MIT`)
+- [Vitest](https://github.com/vitest-dev/vitest) & `@vitest/coverage-v8` (`MIT`)
+- [publint](https://github.com/publint/publint) (`MIT`)
+- [Are The Types Wrong?](https://github.com/arethetypeswrong/arethetypeswrong.github.io) (`MIT`)
+
+---
+
 ## Lisensi
 
-[MIT](./LICENSE) © 2026 salmankalista
+[MIT](./LICENSE) © 2026 salmankalista — dipilih karena bersifat permisif, ringkas, dan menjadi standar industri ekosistem npm sehingga aman dipakai di proyek open-source maupun komersial/enterprise.
