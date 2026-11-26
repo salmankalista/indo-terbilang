@@ -1,0 +1,73 @@
+{
+  "name": "indo-terbilang",
+  "version": "1.0.0",
+  "description": "Zero-dependency, TypeScript-first Indonesian number-to-words (terbilang) and deterministic Rupiah currency formatter.",
+  "keywords": [
+    "terbilang",
+    "indonesia",
+    "rupiah",
+    "idr",
+    "currency",
+    "number-to-words",
+    "formatter",
+    "typescript",
+    "esm",
+    "zero-dependency"
+  ],
+  "license": "MIT",
+  "author": "salmankalista",
+  "homepage": "https://github.com/salmankalista/indo-terbilang#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/salmankalista/indo-terbilang.git"
+  },
+  "bugs": {
+    "url": "https://github.com/salmankalista/indo-terbilang/issues"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint:pkg": "publint && attw --pack .",
+    "test:smoke": "node tests/exports-smoke.mjs",
+    "check:size": "node -e \"const fs=require('node:fs'),zlib=require('node:zlib');const gz=zlib.gzipSync(fs.readFileSync('dist/index.js'));console.log('ESM gzip:',gz.length,'bytes');if(gz.length>=3072)process.exit(1);\"",
+    "verify": "npm run typecheck && npm run test:coverage && npm run build && npm run lint:pkg && npm run test:smoke && npm run check:size"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.5",
+    "@vitest/coverage-v8": "^5.1.2",
+    "publint": "^0.3.25",
+    "tsup": "^9.0.0",
+    "typescript": "^6.0.3",
+    "vitest": "^5.1.2"
+  }
+}
