@@ -104,6 +104,18 @@ const { terbilang, formatRupiah } = require('indo-terbilang');
 
 ---
 
+## Contoh Tampilan Aplikasi Uji (Playground)
+
+Contoh penerapan langsung pada aplikasi web playground berbasis Node.js (`1250750.50` $\to$ `Rp 1.250.750,50` & `"Satu Juta Dua Ratus Lima Puluh Ribu Tujuh Ratus Lima Puluh Rupiah Lima Puluh Sen"`):
+
+![Demo Playground Node.js indo-terbilang](./docs/playground-npm.png)
+
+> **Varian Bahasa Lain:**
+> - **Python:** https://github.com/salmankalista/indo-terbilang-python
+> - **PHP:** https://github.com/salmankalista/indo-terbilang-php
+
+---
+
 ## Tutorial Pemakaian Praktis
 
 ### Tutorial 1: Generate Teks Kwitansi / Invoice Otomatis (Backend PDF)
